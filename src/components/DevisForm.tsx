@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -371,7 +372,7 @@ const DevisForm = ({ onSubmit }: { onSubmit: (data: any) => void }) => {
                           <SelectValue placeholder="Sélectionnez une fourchette" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="small">< 1 000€</SelectItem>
+                          <SelectItem value="small">{"< 1 000€"}</SelectItem>
                           <SelectItem value="medium">1 000€ - 3 000€</SelectItem>
                           <SelectItem value="large">3 000€ - 5 000€</SelectItem>
                           <SelectItem value="enterprise">5 000€+</SelectItem>
