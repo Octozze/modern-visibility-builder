@@ -23,7 +23,6 @@ import { Slider } from "@/components/ui/slider";
 import { useToast } from "@/hooks/use-toast";
 import { Calculator, Send, Plus, Minus, Monitor, Smartphone, Brush, Search, ShieldCheck, RefreshCw, Globe } from "lucide-react";
 
-// Services et options disponibles
 const websiteTypes = [
   { id: "vitrine", label: "Site vitrine", basePrice: 1200 },
   { id: "boutique", label: "Site e-commerce", basePrice: 2500 },
@@ -60,22 +59,18 @@ const DevisForm = ({ onSubmit }: { onSubmit: (data: any) => void }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
-  // Calcul du prix total en fonction des options sélectionnées
   useEffect(() => {
     let price = 0;
     
-    // Prix de base selon le type de site
     const selectedType = websiteTypes.find((type) => type.id === formData.websiteType);
     if (selectedType) {
       price += selectedType.basePrice;
     }
     
-    // Prix par page (150€ par page après les 5 premières)
     if (formData.pagesCount > 5) {
       price += (formData.pagesCount - 5) * 150;
     }
     
-    // Prix des options
     formData.optionsList.forEach((optionId) => {
       const option = options.find((opt) => opt.id === optionId);
       if (option) {
@@ -90,7 +85,6 @@ const DevisForm = ({ onSubmit }: { onSubmit: (data: any) => void }) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     
-    // Effacer l'erreur quand l'utilisateur modifie le champ
     if (errors[name]) {
       setErrors((prev) => {
         const newErrors = { ...prev };
@@ -103,7 +97,6 @@ const DevisForm = ({ onSubmit }: { onSubmit: (data: any) => void }) => {
   const handleSelectChange = (name: string, value: string) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
     
-    // Effacer l'erreur quand l'utilisateur modifie le champ
     if (errors[name]) {
       setErrors((prev) => {
         const newErrors = { ...prev };
@@ -156,7 +149,6 @@ const DevisForm = ({ onSubmit }: { onSubmit: (data: any) => void }) => {
     e.preventDefault();
     
     if (validateForm()) {
-      // Envoyer les données à la page parent
       onSubmit({
         ...formData,
         totalPrice,
