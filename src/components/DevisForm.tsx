@@ -354,7 +354,7 @@ const DevisForm = ({ onSubmit }: { onSubmit: (data: any) => void }) => {
                           <SelectValue placeholder="Sélectionnez un délai" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="urgent">Urgent (< 1 mois)</SelectItem>
+                          <SelectItem value="urgent">Urgent ({"< 1 mois"})</SelectItem>
                           <SelectItem value="normal">Standard (1-2 mois)</SelectItem>
                           <SelectItem value="flexible">Flexible (2-3 mois)</SelectItem>
                           <SelectItem value="long">Long terme (3+ mois)</SelectItem>
