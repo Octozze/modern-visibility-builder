@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -25,11 +24,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Calculator, Send, Plus, Minus, Monitor, Smartphone, Brush, Search, ShieldCheck, RefreshCw, Globe } from "lucide-react";
 
 const websiteTypes = [
-  { id: "vitrine", label: "Site vitrine", basePrice: 1200 },
-  { id: "boutique", label: "Site e-commerce", basePrice: 2500 },
-  { id: "blog", label: "Blog", basePrice: 900 },
-  { id: "application", label: "Application web", basePrice: 4000 },
-  { id: "landing", label: "Landing page", basePrice: 600 },
+  { id: "vitrine", label: "Site vitrine", basePrice: 550 },
 ];
 
 const options = [
