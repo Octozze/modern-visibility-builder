@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -53,12 +52,6 @@ const Navbar = () => {
             Contact
           </a>
         </nav>
-        
-        <div className="hidden md:block">
-          <Button className="bg-secondary hover:bg-secondary/90" asChild>
-            <Link to="/devis">Demander un devis</Link>
-          </Button>
-        </div>
 
         {/* Bouton hamburger pour mobile */}
         <button 
@@ -102,13 +95,6 @@ const Navbar = () => {
             >
               Contact
             </a>
-            <Button 
-              className="bg-secondary hover:bg-secondary/90 w-full mt-2"
-              onClick={() => setIsMenuOpen(false)}
-              asChild
-            >
-              <Link to="/devis">Demander un devis</Link>
-            </Button>
           </nav>
         </div>
       )}
